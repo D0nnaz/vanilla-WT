@@ -1,0 +1,69 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+.embedImage {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+
+    @include mediaQuery-embedDesktop {
+        &:after {
+            // Prevents paragraphs from collapsing borders with images.
+            // This way the margin for the paragraph aligns with the image.
+            content: "";
+            display: block;
+            height: 1px;
+        }
+
+        &.display-small .embedExternal-content {
+            max-width: calc(33.333% - 1px);
+        }
+
+        &.display-medium .embedExternal-content {
+            max-width: calc(66.666% - 1px);
+        }
+
+        &.float-left .embedExternal-content {
+            float: left;
+            margin-right: 20px;
+        }
+
+        &.float-right .embedExternal-content {
+            float: right;
+            margin-left: 20px;
+        }
+    }
+}
+
+.Message img .embedImage-img, // Compatibility
+.embedImage-img {
+    height: auto;
+    display: inline-flex; // https://github.com/vanilla/support/issues/3336
+    position: relative;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    max-width: 100%;
+    max-height: $embed_image_max_height;
+}
+
+.bbcode_left {
+    .embedImage-img {
+        margin-left: 0;
+        display: inline-block;
+    }
+}
+.bbcode_right {
+    .embedImage-img {
+        margin-right: 0;
+        display: inline-block;
+    }
+}
+
+.embedImage-link {
+    display: inline-flex; // https://github.com/vanilla/support/issues/3336
+    flex-direction: column;
+}

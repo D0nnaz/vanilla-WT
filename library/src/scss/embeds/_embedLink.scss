@@ -1,0 +1,76 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+$embedLink-linkImage_width: 225px !default;
+$embedLink-linkImage_mobileWidth: 100px !default;
+$embedLink-image_separatorColor: rgba($global-color_fg, 0.1) !default;
+
+$embedLink-source_fontSize: $global-medium_fontSize !default;
+
+$embedLink-excerpt_fontSize: $global-medium_fontSize !default;
+$embedLink-excerpt_lineHeight: 1.4 !default;
+
+.embedLink-image {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: {
+        top: auto;
+        bottom: auto;
+    }
+    width: $embedLink-linkImage_width;
+
+    @supports (object-fit: cover) {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    + .embedText-main {
+        margin-left: auto;
+        width: calc(100% - #{$embedLink-linkImage_width});
+
+        border-left: {
+            style: solid;
+            width: 1px;
+            color: $embedLink-image_separatorColor;
+        }
+    }
+
+    @include mediaQuery-embedMobile {
+        position: relative;
+        width: 100%;
+        padding-top: 0;
+
+        + .embedText-main {
+            width: 100%;
+            border-right: none;
+        }
+    }
+}
+
+.embedLink-source {
+    font-size: $metaText_fontSize;
+    color: $metaText_color;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+.embedLink-excerpt {
+    color: #555a62;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    max-width: 100%;
+    font-size: $embedLink-excerpt_fontSize;
+    margin-top: $embedded-small_spacing;
+    line-height: $embedLink-excerpt_lineHeight;
+    max-height: #{$embedLink-excerpt_lineHeight * $embedLink-excerpt_fontSize * 3};
+    white-space: normal;
+}

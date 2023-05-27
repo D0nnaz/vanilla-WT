@@ -1,0 +1,14 @@
+!function(e){var t={};function n(i){if(t[i])return t[i].exports;var o=t[i]={i:i,l:!1,exports:{}};return e[i].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,i){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:i})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var i=Object.create(null);if(n.r(i),Object.defineProperty(i,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(i,o,function(t){return e[t]}.bind(null,o));return i},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";n.r(t);
+/*!
+ * @author Isis (igraziatto) Graziatto <isis.g@vanillaforums.com>
+ * @copyright 2009-2018 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+var i="needsInitialization",o="data-height",r="0px";function a(e){e.style.height=r}function u(e){if(e&&e.classList){e.classList.add(i),e.style.height="auto";var t=e.getBoundingClientRect().height;e.setAttribute(o,t.toString()),a(e),e.classList.remove(i)}}
+/*!
+ * @author Isis (igraziatto) Graziatto <isis.g@vanillaforums.com>
+ * @copyright 2009-2018 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+$(function(){window.gdn.getMeta("featureFlags.DataDrivenTitleBar.Enabled",!1)||function(){var e=document.querySelector("#menu-button"),t=document.querySelector(".js-nav"),n=document.querySelector(".js-mobileMebox"),i=document.querySelector(".mobileMeBox-button"),c=document.querySelector(".mobileMebox-buttonClose"),s=document.querySelector("#MainHeader");function l(e){e.style.height===r?function(e){e.style.height=e.getAttribute(o)+"px"}(e):a(e)}u(n),u(t),window.addEventListener("resize",function(){requestAnimationFrame(function(){u(n),u(t)})}),e&&e.addEventListener("click",function(){e.classList.toggle("isToggled"),s.classList.toggle("hasOpenNavigation"),a(n),l(t)}),i&&i.addEventListener("click",function(){i.classList.toggle("isToggled"),s.classList.remove("hasOpenNavigation"),e.classList.remove("isToggled"),a(t),l(n)}),c&&c.addEventListener("click",function(){a(n)})}(),window.gdn.meta.themeFeatures.NewCategoryDropdown?$("select").each(function(){$(this).attr("name")&&"CategoryID"!==$(this).attr("name")&&$(this).wrap('<div class="SelectWrapper"></div>')}):$("select").wrap('<div class="SelectWrapper"></div>')})}]);
+//# sourceMappingURL=custom.js.map

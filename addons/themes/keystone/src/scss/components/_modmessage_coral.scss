@@ -1,0 +1,12 @@
+.CasualMessage {
+    background-color: mix($global-color_secondary, $global-color_bg, 10%);
+    border-color: $global-color_secondary;
+}
+
+.CasualMessage,
+.AlertMessage,
+.WarningMessage {
+    a {
+        color: $global-color_fg;
+    }
+}

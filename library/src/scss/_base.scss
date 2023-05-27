@@ -1,0 +1,24 @@
+/**
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+@import "~library-scss/coreVariables";
+@import "~@vanilla/theme-core/scss/mixins/mixins";
+
+@import "~library-scss/utility/normalize";
+@import "~library-scss/utility/utilities";
+@import "~library-scss/utility/icons";
+
+// Embeds
+@import "~library-scss/embeds/embeds";
+
+@import "~library-scss/utility/scaffolding";
+@import "~library-scss/utility/utilities";
+
+// Clear reach warning
+// https://reach.tech/styling/
+:root {
+    --reach-tooltip: 1;
+    --react-skip-nav: 1;
+}

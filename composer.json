@@ -1,0 +1,173 @@
+{
+    "name": "vanilla/vanilla",
+    "description": "Vanilla is a powerfully simple discussion forum you can easily customize to make as unique as your community.",
+    "type": "project",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "Todd Burry",
+            "email": "todd@vanillaforums.com"
+        },
+        {
+            "name": "Mark O'Sullivan",
+            "email": "mark@vanillaforums.com"
+        },
+        {
+            "name": "Tim Gunter",
+            "email": "tim@vanillaforums.com"
+        },
+        {
+            "name": "Lincoln Russell",
+            "email": "lincoln@vanillaforums.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "7.2.34"
+        },
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true,
+            "metasyntactical/composer-plugin-license-check": true
+        }
+    },
+    "require": {
+        "php": "^7.2.34",
+        "ext-pdo": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-fileinfo": "*",
+        "ext-dom": "*",
+        "ext-gd": "*",
+        "ext-libxml": "*",
+        "chrisjean/php-ico": "~1.0",
+        "container-interop/container-interop": "^1.1",
+        "delight-im/cookie": "^3.4",
+        "dragonmantank/cron-expression": "^3.0",
+        "fig/event-dispatcher-util": "^1.1",
+        "firebase/php-jwt": "^5.2",
+        "league/html-to-markdown": "^4.10",
+        "league/uri": "^6.2",
+        "michelf/php-markdown": "~1.9",
+        "nette/neon": "^3.1",
+        "pclzip/pclzip": "~2.0",
+        "phpmailer/phpmailer": "^6.5.0",
+        "psr/cache": "^1.0",
+        "psr/event-dispatcher": "^1.0",
+        "psr/log": "~1.0",
+        "psr/simple-cache": "^1.0",
+        "ralouphie/mimey": "^2.1",
+        "ramsey/uuid": "^3.0",
+        "smarty/smarty": "3.1.43",
+        "symfony/cache": "^5.2",
+        "symfony/css-selector": "^4.4",
+        "symfony/polyfill-intl-idn": "^1.12",
+        "symfony/polyfill-php73": "^1.13",
+        "symfony/polyfill-php74": "^1.13",
+        "symfony/polyfill-php80": "^1.16",
+        "symfony/yaml": "^3.2",
+        "tburry/pquery": "~1.1",
+        "twig/twig": "^2.5",
+        "vanilla/cloud-interops": "^2.0",
+        "vanilla/garden-container": "^3.1",
+        "vanilla/garden-http": "~2.5",
+        "vanilla/garden-jsont": "^1.2",
+        "vanilla/garden-password": "~1.0",
+        "vanilla/garden-schema": "1.13",
+        "vanilla/htmlawed": "~2.0",
+        "vanilla/js-connect-php": "^3.2.1",
+        "vanilla/legacy-oauth": "~1.0",
+        "vanilla/legacy-passwords": "~1.0",
+        "vanilla/nbbc": "~2.1",
+        "vanilla/safecurl": "~0.9",
+        "webmozart/assert": "^1.9",
+        "webmozart/path-util": "^2.3",
+        "bopoda/robots-txt-parser": "^2.4",
+        "vanilla/garden-hydrate": "^2.2.1",
+        "fakerphp/faker": "^1.19",
+        "symfony/lock": "^5.2"
+    },
+    "require-dev": {
+        "cache/integration-tests": "dev-master",
+        "exussum12/coverage-checker": "~0.10",
+        "johnkary/phpunit-speedtrap": "^3.2",
+        "mikey179/vfsstream": "~1.6",
+        "nette/robot-loader": "^3.2",
+        "phing/phing": "2.*",
+        "phpunit/phpunit": "~8.0",
+        "roave/security-advisories": "dev-latest",
+        "symfony/phpunit-bridge": "^5.1",
+        "vimeo/psalm": "^3.13",
+        "voku/html-min": "3.0.5",
+        "voku/simple_html_dom": "4.1.7",
+        "wikimedia/composer-merge-plugin": "^2.0"
+    },
+    "provide": {
+        "ext-gd": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "library/core/",
+            "library/deprecated/",
+            "library/database/",
+            "library/setup/"
+        ],
+        "files": [
+            "library/core/functions.error.php",
+            "library/core/functions.framework.php",
+            "library/core/functions.general.php",
+            "library/core/functions.compatibility.php",
+            "library/deprecated/functions.deprecated.php"
+        ],
+        "psr-4": {
+            "Vanilla\\": "library/Vanilla",
+            "Garden\\": "library/Garden"
+        }
+    },
+    "scripts": {
+        "pre-install-cmd": "Vanilla\\Setup\\ComposerHelper::preUpdate",
+        "pre-update-cmd": "Vanilla\\Setup\\ComposerHelper::preUpdate",
+        "post-install-cmd": "Vanilla\\Setup\\ComposerHelper::postUpdate",
+        "lint-diff": "./.circleci/scripts/diff-standards.sh"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "VanillaTests\\": "tests",
+            "VanillaTests\\Fixtures\\": "tests\\fixtures\\src",
+            "GardenTests\\": "tests",
+            "GardenTests\\Fixtures\\": "tests\\fixtures\\src"
+        }
+    },
+    "extra": {
+        "metasyntactical/composer-plugin-license-check": {
+            "whitelist": [
+                "MIT",
+                "BSD-2-Clause",
+                "BSD-3-Clause",
+                "LGPL-2.1",
+                "LGPL-2.1-only",
+                "LGPL-3.0",
+                "LGPL-3.0-only",
+                "GPL-2.0",
+                "GPL-2.0+",
+                "OSL-3.0",
+                "Apache-2.0",
+                "ISC"
+            ]
+        },
+        "merge-plugin": {
+            "include": [
+                "addons/*/composer.json",
+                "plugins/*/composer.json",
+                "cli/composer.json"
+            ],
+            "recurse": false,
+            "replace": false,
+            "ignore-duplicates": false,
+            "merge-dev": false,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": false
+        }
+    }
+}

@@ -1,0 +1,227 @@
+// Cards
+//
+// Styleguide 12.
+
+// Card
+//
+// A card is a collection of info that appears in a vertical card-looking container. We currently use a card for the
+// user dropdown in the navbar, as well as for the category selector dropdown in the Analytics section of the dashboard.
+// A card's width will expand or contract based on the size of the container it's in. Use drop.js functionality by
+// setting an id on the trigger and a data attribute for the content as shown in Section 12.1.1
+//
+// Section 12.1.
+
+// Configuring drop.js
+//
+// For any element with the `.js-drop` class applied, dashboard.js initializes this html to be content of the block
+// with an id that matches the `data-content-id` attribute. Note that the trigger needs to have an id set in order for
+// this functionality to work, as drop expects a unique query selector.
+//
+// Markup:
+// <div id="trigger" class="js-drop btn btn-secondary" data-content-id="content">
+//   Click Me
+// </div>
+// <aside id="content" class="hidden" aria-hidden="true">
+//   <div class="card card-user">
+//     <div class="card-block media media-sm">
+//       <div class="media-left">
+//         <div class="media-image-wrap">
+//           <a title="LittleChick" href="#">
+//             <img src="./public/resources/images/little-chick.jpg">
+//           </a>
+//         </div>
+//       </div>
+//       <div class="media-content">
+//         <div class="media-title">
+//           <a href="#">LittleChick</a>
+//         </div>
+//         <div class="info">Administrator</div>
+//         <a class="btn btn-sm-rounded btn-secondary padded-top" href="#">
+//           My Profile
+//           <svg class="icon icon-11 icon-text icon-svg-external-link" viewBox="0 0 17 17">
+//             <use xlink:href="#external-link"></use>
+//           </svg>
+//         </a>
+//       </div>
+//     </div>
+//     <div class="list-group list-group-flush"> <!-- Uses twbs css -->
+//       <a href="#" class="list-group-item" target="_blank">
+//         Customer Support
+//         <svg class="icon icon-svg-external-link" viewBox="0 0 17 17">
+//           <use xlink:href="#external-link"></use>
+//         </svg>
+//       </a>
+//     </div>
+//     <div class="card-footer">
+//       <a href="#" class="btn btn-secondary">Sign Out</a>
+//     </div>
+//   </div>
+// </aside>
+//
+// Styleguide 12.1.1
+
+// Card
+//
+// Here's the markup for a card.
+//
+// Markup:
+// <div class="card card-user">
+//   <div class="card-block media media-sm">
+//     <div class="media-left">
+//       <div class="media-image-wrap">
+//         <a title="LittleChick" href="#">
+//           <img src="./public/resources/images/little-chick.jpg">
+//         </a>
+//       </div>
+//     </div>
+//     <div class="media-content">
+//       <div class="media-title">
+//         <a href="#">LittleChick</a>
+//       </div>
+//       <div class="info">Administrator</div>
+//       <a class="btn btn-sm-rounded btn-secondary padded-top" href="#">
+//         My Profile
+//         <svg class="icon icon-11 icon-text icon-svg-external-link" viewBox="0 0 17 17">
+//           <use xlink:href="#external-link"></use>
+//         </svg>
+//       </a>
+//     </div>
+//   </div>
+//   <div class="list-group list-group-flush"> <!-- Uses twbs css -->
+//     <a href="#" class="list-group-item" target="_blank">
+//       Customer Support
+//       <svg class="icon icon-svg-external-link" viewBox="0 0 17 17">
+//         <use xlink:href="#external-link"></use>
+//       </svg>
+//     </a>
+//   </div>
+//   <div class="card-footer">
+//     <a href="#" class="btn btn-secondary">Sign Out</a>
+//   </div>
+// </div>
+//
+// Styleguide 12.1.2
+
+.card {
+    position: relative;
+    display: block;
+    background-color: $card-bg;
+    border: $card-border-width solid $card-border-color;
+    @include border-radius($card-border-radius);
+
+    // list-group uses twbs's scss.
+    .list-group-item {
+        font-weight: 600;
+        background-color: $grey-lighter;
+
+        &:hover {
+            background-color: lighten($grey-lighter, 1%);
+        }
+
+        .icon {
+            position: absolute;
+            right: 16px;
+            top: 16px;
+        }
+    }
+
+    svg {
+        position: relative;
+        width: $font-size-base;
+    }
+
+    .card-title {
+        margin-top: 0;
+        font-size: 16px;
+    }
+
+    .media-title {
+        font-weight: 600;
+    }
+
+    .media-sm {
+        .media-image-wrap {
+            @include image-wrap();
+        }
+
+        .media-left {
+            height: 84px;
+            padding-right: $spacer;
+        }
+    }
+
+    .media {
+        align-items: flex-start;
+    }
+
+    // Variant for panel.
+    .panel-nav & {
+        display: block;
+        padding: 0;
+        margin-top: $spacer * 0.5;
+        background: 0;
+        border: 0;
+        border-top: 1px dotted rgba(0, 0, 0, 0.0875);
+
+        .card-block {
+            padding-left: 0;
+        }
+
+        .btn.btn-sm-rounded {
+            min-width: 312px;
+            padding: 1px 8px;
+            font-size: 9px;
+
+            svg {
+                position: relative;
+                width: 9px;
+            }
+        }
+    }
+}
+
+.card-label-list {
+    width: 100%;
+
+    .card-label-list {
+        padding-left: 16px;
+        padding-top: 4px;
+    }
+    li {
+        padding-bottom: 4px;
+        padding-top: 4px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    strong {
+        display: inline-block;
+        width: 120px;
+        min-width: 120px;
+        padding-right: 12px;
+        font-weight: 600;
+    }
+}
+
+.card-footer {
+    @include has-top-border;
+
+    padding: $spacer * 1.25;
+    text-align: center;
+    border-top: $border-width solid $card-border-color;
+}
+
+.card-block {
+    padding: $spacer;
+    &.card-block-minimal {
+        padding: 9px;
+    }
+}
+
+.drop {
+    z-index: 1005;
+}

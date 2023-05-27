@@ -1,0 +1,155 @@
+/**
+ * @author Stéphane (slafleche) LaFlèche <stephane.l@vanillaforums.com>
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license Proprietary
+ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button {
+    appearance: none;
+    position: relative;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    overflow: hidden;
+}
+
+// Disabled Inputs
+option,
+select,
+textarea,
+button,
+input {
+    &.isDisabled,
+    &[disabled] {
+        @include disabledInput();
+    }
+}
+
+input,
+select,
+textarea {
+    /* Omitting radio inputs since they are generally inline if not overwritten */
+    &[type="radio"],
+    &[type="checkbox"] {
+        width: inherit;
+    }
+    width: 100%;
+}
+
+select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    height: auto;
+}
+
+caption {
+    @include sr-only;
+}
+
+mark {
+    background-color: $mark_bg;
+    color: $global-color-fg;
+}
+
+a {
+    @include allLinkStates {
+        text-decoration: none;
+    }
+}
+
+b,
+strong {
+    font-weight: $global-fontWeight_bold;
+}
+
+s,
+strike {
+    text-decoration: line-through;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+textarea {
+    display: block;
+    margin: 0;
+    min-height: $global-textArea_minHeight;
+    width: 100%;
+    resize: vertical;
+    border-color: $formElement_borderColor;
+    padding: $global-textArea_padding;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+    min-inline-size: 0;
+}
+
+body.js-focus-visible:not(.hasNativeFocus) :focus:not(.focus-visible) {
+    outline: none;
+}
+
+abbr,
+abbr[title] {
+    text-decoration: none;
+}
+
+hr {
+    margin: 0;
+    border: {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        style: solid;
+    }
+}
+
+iframe {
+    border: 0;
+}
+
+body:not(.dashboard) svg {
+    pointer-events: none !important;
+}

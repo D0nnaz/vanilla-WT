@@ -1,0 +1,444 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+$richEditor_horizontalPadding: 36px !default;
+$richEditor_verticalPadding: 12px !default;
+$richEditor_innerPadding: 12px !default;
+
+body {
+    visibility: hidden; // To prevent FOUC
+}
+
+.richEditor {
+    blockquote {
+        display: block;
+        margin: 0;
+    }
+
+    .richEditorParagraphMenu {
+        left: 0;
+    }
+
+    &.isDisabled {
+        // Before React has replaced initial HTML
+        &,
+        .richEditor-button {
+            cursor: progress !important;
+        }
+    }
+
+    .ReactVirtualized__Grid {
+        min-width: 252px;
+    }
+
+    .richEditor-menuItems {
+        border-bottom: 0;
+    }
+
+    .richEditor-frame {
+        height: initial;
+        min-height: 275px;
+    }
+}
+
+.userContent {
+    line-height: $global-base_lineHeight;
+
+    &.Message {
+        margin-top: $global-medium_fontSize;
+        // Target the last paragraph which is adjacent to the image and add a clear fix
+        & > .embedImage ~ p:last-child {
+            @include clearfix();
+        }
+        // If the image is floated and its the only content, add a clearfix
+        & > .embedImage:first-child:last-child {
+            @include clearfix();
+        }
+    }
+
+    @if ($staticVariables) {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: $global-condensed_lineHeight;
+            color: $global-color_fg;
+        }
+    }
+
+    > *:not(.emoji) {
+        &:not(:last-child):not(br) {
+            margin-bottom: $global-block_margin;
+        }
+
+        &:first-child:not(br):not(.embedExternal) {
+            margin-top: #{(1 - $global-base_lineHeight) * 0.5em} !important;
+        }
+    }
+
+    .embedResponsive {
+        margin-bottom: 0 !important;
+    }
+
+    .float-left,
+    .float-right {
+        // Remove margin of the containing div and instead add margin to the floating element.
+        margin: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+
+        .embedExternal-content {
+            margin-bottom: $global-block_margin;
+        }
+    }
+
+    .embedExternal {
+        margin-bottom: $global-block_margin;
+    }
+
+    &,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    div,
+    td,
+    th,
+    a,
+    p {
+        word-break: break-word;
+        text-overflow: ellipsis;
+    }
+
+    .CommentHeader {
+        margin-bottom: $global-medium_fontSize;
+    }
+
+    li {
+        &,
+        *:first-child {
+            margin-top: 0;
+        }
+        &,
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .metas {
+        display: block;
+        line-height: $meta_lineHeight;
+        color: $metas_color;
+        width: calc(100% + #{$meta_spacing * 2});
+        overflow: hidden;
+        text-align: left;
+
+        margin: {
+            left: -#{$meta_spacing};
+            right: $meta_spacing;
+        }
+
+        &.isFlexed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+
+    .meta {
+        display: inline-block;
+        margin: 0 $meta_spacing;
+        font-size: $metaText_fontSize;
+        color: $metas_color;
+
+        .meta {
+            margin: 0;
+        }
+    }
+}
+
+.richEditor-menu {
+    @include shadow-embed;
+    background-color: $global-color_bg;
+    border: {
+        radius: $global-borderRadius;
+        color: $global-border_color;
+        style: $global-border_style;
+        width: $global-border_width;
+    }
+}
+
+.richEditor-button {
+    user-select: none;
+    cursor: pointer;
+}
+
+// Styles that only take affect when the rich editor is enabled.
+body.hasRichEditor {
+    .richEditor ~ .TextBoxWrapper,
+    .PreviewButton,
+    #Form_Preview {
+        // The text box wrapper can have $.show() called on it which adds an inline `display: block`.
+        display: none !important;
+    }
+    .richEditor {
+        .buttonClose {
+            appearance: none;
+            border: 0;
+        }
+
+        .spoiler {
+            .iconButton {
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
+}
+
+.Popup.hasRichEditor {
+    .Border {
+        box-sizing: border-box;
+    }
+
+    .richEditor ~ .TextBoxWrapper,
+    .PreviewButton,
+    #Form_Preview {
+        // The text box wrapper can have $.show() called on it which adds an inline `display: block`.
+        display: none !important;
+    }
+}
+
+@include mediaQuery-richEditor_mobile {
+    .Popup.hasRichEditor {
+        .Border {
+            width: 100%;
+        }
+    }
+}
+
+// Handle gutter for paragraph menu
+@include mediaQuery-richEditor_notMobile {
+    .Popup.hasRichEditor,
+    body.hasRichEditor {
+        // New Discussions
+        &.Section-PostDiscussion {
+            #DiscussionForm {
+                select {
+                    max-width: 100%;
+                }
+
+                .FormWrapper {
+                    padding: {
+                        left: $richEditor_horizontalPadding;
+                        right: $richEditor_horizontalPadding;
+                    }
+
+                    .richEditor {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+
+        // Comment
+        .CommentForm {
+            .CommentFormWrap {
+                .Form-HeaderWrap {
+                    display: none;
+                }
+
+                .FormWrapper {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+
+            .richEditor {
+                padding: {
+                    left: $richEditor_horizontalPadding;
+                    right: $richEditor_horizontalPadding;
+                }
+
+                .richEditor {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+
+            .Buttons {
+                padding-right: $richEditor_horizontalPadding;
+            }
+        }
+
+        .Activities ul.DataList {
+            margin-left: $richEditor_horizontalPadding;
+        }
+
+        .ActivityComment + .CommentForm {
+            margin-top: $richEditor_verticalPadding;
+            .richEditor {
+                padding: {
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            .Buttons.Buttons {
+                padding-right: 0;
+            }
+        }
+
+        // New Message
+        #EventAddEditForm,
+        #GroupForm,
+        #MessageForm,
+        #ConversationForm {
+            .Form-HeaderWrap {
+                display: none;
+            }
+
+            .FormWrapper {
+                padding: {
+                    left: $richEditor_horizontalPadding;
+                    right: $richEditor_horizontalPadding;
+                }
+
+                .richEditor {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        &.Profile {
+            .FormWrapper.FormWrapper-Condensed {
+                padding-right: $richEditor_horizontalPadding;
+                padding-left: 0;
+
+                .Activity {
+                    .Buttons {
+                        padding-left: $richEditor_horizontalPadding;
+                    }
+                }
+            }
+        }
+
+        &.Section-Conversation {
+            .CommentForm {
+                .Buttons {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .Popup.hasRichEditor {
+            .Border {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .Content {
+                > h1 {
+                    padding-left: $richEditor_horizontalPadding;
+                }
+            }
+
+            .FormWrapper {
+                background: none;
+                padding: {
+                    top: 3px;
+                    left: $richEditor_horizontalPadding;
+                    right: $richEditor_horizontalPadding;
+                }
+            }
+
+            .richEditor {
+                padding-left: 0;
+            }
+        }
+
+        // Notes
+        .NoteForm.FormWrapper {
+            padding: {
+                left: $richEditor_horizontalPadding;
+                right: $richEditor_horizontalPadding;
+            }
+
+            .richEditor {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.richEditor-text {
+    overflow: visible;
+    min-height: 200px;
+    padding: {
+        top: $richEditor_verticalPadding;
+        right: $richEditor_innerPadding;
+        bottom: $richEditor_verticalPadding;
+        left: $richEditor_innerPadding;
+    }
+    border-radius: $formElement_borderRadius;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ql-clipboard {
+    @include sr-only();
+    // Fixed https://github.com/quilljs/quill/issues/1374#issuecomment-415333651
+    position: fixed;
+}
+
+.richEditor-upload {
+    @include sr-only;
+}
+
+// Mobile
+body.isMobile {
+    @include legacyMobileStyles();
+}
+
+@include mediaQuery-richEditor_mobile {
+    @include legacyMobileStyles();
+}
+
+.richEditor-menu.richEditorFlyout {
+    bottom: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.richEditor-textWrap {
+    min-height: 236px;
+}
+
+.richEditor-close.richEditor-close {
+    display: block;
+}
+
+// IE 10 and 11 specific CSS
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    .richEditorFlyout {
+        .richEditorFlyout-header.richEditorFlyout-header {
+            display: table;
+        }
+
+        .richEditorFlyout-title.richEditorFlyout-title {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}

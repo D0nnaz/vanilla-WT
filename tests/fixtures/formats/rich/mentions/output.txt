@@ -1,0 +1,2 @@
+@notAMention
+ @@thisIsARealMention @@duplicateMention@@duplicateMention @@@@@@!@#$%^&amp;*()&quot;&quot;

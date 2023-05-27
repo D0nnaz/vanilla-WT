@@ -1,0 +1,26 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+// Global
+@import "embedGlobalVariables";
+@import "embedGlobal";
+@import "mixin.embedBreakpoints";
+
+// Generic
+@import "embedVideo";
+@import "embedImage";
+@import "embedText";
+@import "embedLink";
+@import "embedQuote";
+@import "embedLoader";
+@import "embedIFrame";
+
+// Specific
+@import "embedGetty";
+@import "embedGiphy";
+@import "embedInstagram";
+@import "embedImgur";
+@import "embedSoundCloud";
+@import "embedInstagram";

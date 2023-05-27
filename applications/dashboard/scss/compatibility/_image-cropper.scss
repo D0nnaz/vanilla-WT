@@ -1,0 +1,28 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+/** Hides the image cropper on mobile themes. This image cropper is not mobile compatible. */
+body.isMobile {
+    .box-crop .box-source {
+        display: none;
+    }
+
+    .change-picture .change-picture-instructions {
+        display: none;
+    }
+}
+
+// Hide on smaller screens
+
+@media (max-width: 600px) {
+    // 600px is the size of the default popup styles
+    .box-crop .box-source {
+        display: none;
+    }
+
+    .change-picture .change-picture-instructions {
+        display: none;
+    }
+}

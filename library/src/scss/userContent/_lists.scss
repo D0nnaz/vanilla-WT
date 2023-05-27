@@ -1,0 +1,56 @@
+/**
+ * @author Stéphane LaFlèche <stephane.l@vanillaforums.com>
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+// Rich editor needs to force styling of list elements.
+
+$nestedList-margin: 0 0 0 1em;
+
+.userContent ul,
+.userContent ol {
+    margin: 1em 0 1em 2em;
+}
+
+.userContent {
+    ol {
+        > li {
+            list-style: decimal !important;
+        }
+        ol > li {
+            list-style: lower-alpha !important;
+        }
+        ol ol > li {
+            list-style: lower-roman !important;
+        }
+        ol ol ol > li {
+            list-style: decimal !important;
+        }
+        ol ol ol ol > li {
+            list-style: lower-alpha !important;
+        }
+        ol ol ol ol ol > li {
+            list-style: lower-roman !important;
+        }
+        ol ol ol ol ol ol > li {
+            list-style: decimal !important;
+        }
+        ol,
+        ul {
+            margin: $nestedList-margin;
+        }
+    }
+    ul {
+        ol,
+        ul {
+            margin: $nestedList-margin;
+        }
+    }
+}
+
+// Too overcome bootstrap 3's hideous selector "form ul:not(.List) li"
+.userContent li,
+.userContent.userContent ul li {
+    margin: 5px 0;
+}

@@ -1,0 +1,61 @@
+/*!
+ * @author Adam Charron <adam.c@vanillaforums.com>
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+// You can think of this file as patches/improvements for "style.scss". The reason it isn't in there is because some themes
+// namely the Bootstrap theme, have their own "style.scss" file and won't load it. Put any styles you wish across all themes
+// here.
+
+// This CSS file should always be added after style.css and not be overridden.
+// Variables
+@import "../../../library/src/scss/coreVariables";
+@import "../../../library/src/scss/social/socialMediaVariables";
+
+// Need a special path for this old build process.
+@import "../../../packages/vanilla-theme-core/scss/mixins/_mixins.scss";
+
+$staticVariables: true;
+
+// Compatibility
+@import "compatibility/mixins";
+@import "compatibility/scaffolding";
+@import "compatibility/utilities";
+@import "compatibility/image-cropper";
+@import "compatibility/buttons";
+@import "compatibility/categories";
+@import "compatibility/groups";
+@import "compatibility/popups";
+
+// This should always be added after style.css and not be overridden.
+@import "new-components/authenticateUser";
+@import "new-components/followButton";
+@import "new-components/selectBox";
+@import "new-components/formElements"; // For new authentication pages
+@import "new-components/checkboxAndRadioButton"; // For new forms only
+@import "new-components/buttons"; // For new authentication pages
+@import "new-components/passwordStrength"; // For new authentication pages
+@import "new-components/pageHeading";
+
+// Editor
+@import "compatibility/editor/mixin.legacyMobileStyles";
+@import "compatibility/editor/mixin.legacyEditor";
+@import "compatibility/editor/richEditorLegacy";
+
+// Embeds
+@import "../../../library/src/scss/embeds/embeds";
+@import "../../../library/src/scss/utility/icons";
+
+// Legacy video styles
+.VideoWrap video {
+    max-width: 100%;
+}
+
+// User content
+@import "../../../library/src/scss/userContent/animations";
+@import "../../../library/src/scss/userContent/lists";
+
+body:not(.dashboard) svg {
+    pointer-events: none !important;
+}

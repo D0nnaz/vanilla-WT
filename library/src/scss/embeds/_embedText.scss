@@ -1,0 +1,65 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+$embedText-header_fontSize: $global-medium_fontSize !default;
+$embedText-title_fontWeight: $global-fontWeight_bold !default;
+$embedText-content_boxShadowColor: rgba($global-color_fg, 0.3) !default;
+$embedText-content_bg: #ffffff !default;
+$embedText-content_boxShadow: 0 1px 3px 0 $embedText-content_boxShadowColor !default;
+
+.embedText-body {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    pointer-events: initial !important;
+}
+
+.embedText-main {
+    padding: $embeddedText_padding;
+    box-sizing: border-box;
+}
+
+.embedText-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: $embedText-header_fontSize;
+    line-height: $global-condensed_lineHeight;
+}
+
+.embedText-titleLink {
+    margin: 0;
+    color: inherit;
+}
+
+.embedText {
+    // for compatibility
+    .embedText-titleLink,
+    .embedText-title {
+        margin: {
+            top: 0;
+            bottom: $embedded-small_spacing;
+        }
+        display: block;
+        width: 100%;
+        padding: 0;
+        font-size: $embedText-header_fontSize;
+        font-weight: $embedText-title_fontWeight;
+        line-height: $global-condensed_lineHeight;
+        color: $global-color_fg;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+// Edit Mode
+.richEditor {
+    .embedText-titleLink {
+        pointer-events: none;
+    }
+}

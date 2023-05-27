@@ -1,0 +1,140 @@
+/*!
+ * @copyright 2009-2019 Vanilla Forums Inc.
+ * @license GPL-2.0-only
+ */
+
+.embedResponsive {
+    position: relative;
+    text-align: center;
+}
+
+.embedResponsive-initialLink {
+    text-align: start;
+    padding: $userContent_fontSize;
+}
+
+.embedExternal {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    width: $embed_width;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.embedExternal-content {
+    position: relative;
+    margin: auto;
+    width: $embed_image_max_width;
+    max-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+
+    iframe {
+        display: block;
+        box-sizing: border-box !important;
+    }
+
+    > * {
+        margin: auto !important;
+    }
+}
+
+.embedExternal-ratio {
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+// Embed Loaders
+.embedLinkLoader {
+    text-align: left;
+    display: block;
+}
+
+.embedLinkLoader-failIcon {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    margin: 0;
+    vertical-align: -0.14em;
+    user-select: none;
+}
+
+.embedLinkLoader-loader {
+    @include spinnerLoader(1em, 3px);
+    display: inline-block;
+    vertical-align: -0.14em;
+}
+
+.embedLinkLoader-link {
+    position: relative;
+    display: inline-block;
+    white-space: normal;
+    padding: $embedded-select_borderWidth $embedded-select_borderWidth * 2;
+}
+
+.embed-focusableElement.focus-visible {
+    // We have specifically handled focus styles for these.
+    outline: none !important;
+}
+
+// Edit mode only
+
+.richEditor {
+    .embedExternal {
+        user-select: none;
+    }
+
+    .embedExternal-content,
+    .embedLinkLoader-link {
+        cursor: pointer;
+        // Use a pseudo element so it can be positionned on top the the image and use the "inset" property
+        &:after {
+            @include absolute-fullSizeOfParent;
+            content: "";
+            transition: 0.2s ease box-shadow;
+            pointer-events: none;
+        }
+
+        &:hover {
+            &:after {
+                box-shadow: 0 0 0 $embedded-select_borderWidth rgba($embed_focus_color, 0.5) inset;
+            }
+        }
+    }
+
+    .embedImage {
+        .embedExternal-content:after {
+            @include absolute-fullSizeOfParent;
+            content: "";
+            cursor: "pointer";
+            z-index: 2;
+            transition: 0.2s ease box-shadow;
+            pointer-events: all;
+        }
+    }
+
+    .embed-isSelected {
+        .embedExternal-content,
+        .embedLinkLoader-link {
+            &:after {
+                box-shadow: 0 0 0 $embedded-select_borderWidth $embed_focus_color inset;
+            }
+        }
+    }
+}
+
+.embed-focusableElement {
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+{
+    "license": "gpl-2.0-only",
+    "name": "@vanilla/theme-foundation",
+    "private": true,
+    "version": "3.0.1",
+    "description": "A responsive, asset-compatible Vanilla Forums theme.",
+    "dependencies": {
+        "@vanilla/theme-core": "^3.0.1"
+    }
+}

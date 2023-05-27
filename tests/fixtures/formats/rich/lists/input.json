@@ -1,0 +1,219 @@
+[
+    {
+        "insert": "Bulleted 1"
+    },
+    {
+        "attributes": {
+            "list": "bullet"
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Bulleted 2"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Bulleted 2.1 (indented 1)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 1
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Bulleted 2.1.1 (indented 2)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 2
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Bulleted 2.2 (indented 1)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 1
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Bulleted 3"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "\nNumbered 1"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Numbered 2"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Numbered 2.1 (indented 1)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 1
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Numbered 2.1.1 (indented 2)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 2
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "\nMixed 1"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Mixed 2"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Mixed 2.1 (indented 1)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 1
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Mixed 2.2 (indented 1)"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "bullet",
+                "depth": 1
+            }
+        },
+        "insert": "\n"
+    },
+    {
+        "insert": "Mixed 3"
+    },
+    {
+        "attributes": {
+            "list": {
+                "type": "ordered",
+                "depth": 0
+            }
+        },
+        "insert": "\n"
+    },
+    { "insert": "\n(exp 1) First item" },
+    {
+        "attributes": { "list": { "depth": 0, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp a) First indented item" },
+    {
+        "attributes": { "list": { "depth": 3, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp 2) Second item" },
+    {
+        "attributes": { "list": { "depth": 0, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp 3) Third item" },
+    {
+        "attributes": { "list": { "depth": 0, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp a) First indented item" },
+    {
+        "attributes": { "list": { "depth": 1, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp i) Second indented item" },
+    {
+        "attributes": { "list": { "depth": 2, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp ii) Third indented item" },
+    {
+        "attributes": { "list": { "depth": 2, "type": "ordered" } },
+        "insert": "\n"
+    },
+    { "insert": "(exp 4) Fourth item" },
+    {
+        "attributes": { "list": { "depth": 0, "type": "ordered" } },
+        "insert": "\n"
+    }
+]

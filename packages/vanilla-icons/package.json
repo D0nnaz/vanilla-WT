@@ -1,0 +1,17 @@
+{
+    "name": "@vanilla/icons",
+    "main": "./index.ts",
+    "module": "./index.ts",
+    "license": "MIT",
+    "version": "3.0.1",
+    "peerDependencies": {
+        "@emotion/css": "*",
+        "react": "*"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build:icon-types": "node ./generateIconTypes.js"
+    }
+}

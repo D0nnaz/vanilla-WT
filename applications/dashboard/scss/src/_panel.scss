@@ -1,0 +1,171 @@
+// Panel Components
+//
+// The right panel in the dashboard generally contains explanatory text for the settings page it appears on.
+// Customize theme also adds a control panel component.
+//
+// PHP rendering: Add help content the `Help` asset. To do this, wrap the help div in
+// `Gdn_Theme::assetBegin('Help');` and `Gdn_Theme::assetEnd();`
+//
+// Styleguide 15.
+
+// Help Asset
+//
+// Styles extra helper text for the panel.
+//
+// PHP rendering: The `helpAsset(title, body)` function adds properly formatted help text to the Help asset.
+// To render the following example, you would call:
+// `helpAsset("Need More Help?", "Here's some help text. There are things you should know.");`
+//
+// Markup:
+// <aside role="note" class="help">
+//   <h2 class="help-title">Need More Help?</h2>
+//   <div class="help-description">Here's some help text. There are things you should know.</div>
+// </aside>
+//
+// Styleguide 15.1.
+
+.help {
+    margin-bottom: $spacer * 2;
+    color: $grey-dark;
+
+    .help-title {
+        padding-bottom: $spacer * 0.5;
+        margin-top: 0;
+        margin-bottom: $spacer * 0.5;
+        border-bottom: $border-width dotted $grey-dark-border;
+        letter-spacing: 1px;
+        font-size: $font-size-base;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: $brand-primary;
+        font-size: 13px;
+        font-weight: $font-weight-helvetica-medium;
+        border-bottom: $border-width dotted $brand-primary;
+
+        &,
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    code {
+        word-wrap: break-word;
+    }
+
+    li {
+        margin-bottom: $spacer * 0.25;
+        font-size: 12px;
+    }
+
+    ol,
+    ul {
+        padding-left: $spacer;
+    }
+}
+
+// Control Panel
+//
+// The control panel helps a user manage a list of modifications.
+//
+// Markup:
+// <div class="control-panel">
+//   <h2 class="control-panel-heading">Recent Revisions</h2>
+//   <div class="control-panel-body">
+//     <div class="control-panel-subheading">Oct 7th, 2016</div>
+//     <ul class="control-panel-list">
+//       <li class="control-panel-list-item">
+//         <a href="#">→ 2:07pm</a>
+//         <span class="control-panel-list-item-label">This is it</span>
+//         <svg alt="Previewing" class="icon icon-text icon-svg-star-empty" viewBox="0 0 17 17">
+//           <use xlink:href="#eye"></use>
+//         </svg>
+//       </li>
+//       <li class="control-panel-list-item">
+//         <a href="#">→ 2:04pm</a>
+//         <span class="control-panel-list-item-label">Almost there</span>
+//         <svg alt="Live" class="icon icon-text icon-svg-star-empty" viewBox="0 0 17 17">
+//           <use xlink:href="#star-empty"></use>
+//         </svg>
+//       </li>
+//     </ul>
+//     <div class="control-panel-subheading">Oct 6th, 2016</div>
+//     <ul class="control-panel-list">
+//       <li class="control-panel-list-item">
+//         <a href="#">→ 2:07pm</a>
+//         <span class="control-panel-list-item-label">This is a better attempt at success</span>
+//       </li>
+//       <li class="control-panel-list-item">
+//         <a href="#">→ 2:04pm</a>
+//         <span class="control-panel-list-item-label">First attempt</span>
+//       </li>
+//     </ul>
+//   </div>
+//   <div class="control-panel-footer">
+//     <a href="#" class="btn btn-control-panel">Revert to the Original</a>
+//   </div>
+// </div>
+//
+// Styleguide 15.2.
+
+.control-panel {
+    font-size: 12px;
+    color: $grey-light-text;
+
+    .panel & {
+        margin-bottom: $spacer * 2;
+    }
+
+    .control-panel-list-item {
+        line-height: 18px;
+        margin-bottom: 0;
+
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    ul,
+    ol {
+        @include list-reset;
+    }
+
+    .control-panel-heading {
+        padding-bottom: $spacer * 0.5;
+        margin-top: 0;
+        margin-bottom: $spacer * 0.5;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: $grey-dark;
+        border-bottom: 1px dotted $grey-dark-border;
+    }
+
+    .control-panel-subheading {
+        margin-top: $spacer * 0.5;
+        margin-bottom: $spacer * 0.25;
+        font-weight: 600;
+    }
+
+    .control-panel-footer {
+        margin-top: $spacer;
+    }
+
+    .control-panel-list-item-label {
+        max-width: 102px;
+        font-style: italic;
+        @extend .truncate;
+    }
+
+    select {
+        height: 30px;
+        width: 100%;
+    }
+}
+
+.btn-control-panel {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius);
+    @include button-variant($grey, $btn-secondary-bg, $grey, $btn-primary-bg, $btn-primary-color, $btn-primary-color);
+}

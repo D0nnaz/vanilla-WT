@@ -1,0 +1,9 @@
+heading 1
+
+heading 2
+
+heading 2
+
+
+    <script>alert("xss");</script>
+[spoiler]Legacy Spoiler's Don't Apply[/spoiler]
