@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="1921.63" height="398.72" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1921.63 398.72">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5 {
+        opacity: .09;
+      }
+
+      .cls-6 {
+        fill: #120966;
+      }
+
+      .cls-2 {
+        stroke: #2786a0;
+        stroke-miterlimit: 10;
+        stroke-width: 1.85px;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-9 {
+        opacity: .63;
+      }
+
+      .cls-10 {
+        fill: url(#radial-gradient);
+        opacity: .49;
+      }
+
+      .cls-11 {
+        fill: #2786a0;
+        opacity: .29;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="2.86" y1="4.62" x2="1922.12" y2="4.62" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1eac8f"/>
+      <stop offset="1" stop-color="#2786a0" stop-opacity=".7"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="-85.44" y="7.06" width="2128.01" height="265.06"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <polygon class="cls-1" points="1921.82 398.73 -1.13 398.73 -3.24 5.09 1919.7 5.09 1921.82 398.73"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <polygon class="cls-1" points="1921.82 554.73 -1.13 554.73 -3.24 5.09 1919.7 5.09 1921.82 554.73"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="2109.11" cy="45.09" fx="2109.11" fy="45.09" r="763.61" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1eac8f"/>
+      <stop offset="1" stop-color="#1b997f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect class="cls-3" x="2.86" y=".14" width="1919.26" height="8.96"/>
+  <g>
+    <g>
+      <polygon class="cls-6" points="1921.82 398.73 -.02 398.75 -.13 6.43 1922.06 4.34 1921.82 398.73"/>
+      <g class="cls-4">
+        <g class="cls-5">
+          <path class="cls-2" d="m1857.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1787.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1717.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1647.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1577.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1507.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1437.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1367.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1297.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1227.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1157.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1087.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m1017.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m947.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m877.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m807.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m737.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m667.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m597.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m527.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m457.55,201.48l207.88-567.01h101.92s-208.68,567.01-208.68,567.01"/>
+          <path class="cls-2" d="m387.55,201.48l207.88-567.01h101.92S488.66,201.48,488.66,201.48"/>
+          <path class="cls-2" d="m317.55,201.48l207.88-567.01h101.92S418.66,201.48,418.66,201.48"/>
+          <path class="cls-2" d="m247.55,201.48l207.88-567.01h101.92S348.66,201.48,348.66,201.48"/>
+          <path class="cls-2" d="m177.55,201.48l207.88-567.01h101.92S278.66,201.48,278.66,201.48"/>
+          <path class="cls-2" d="m107.55,201.48l207.88-567.01h101.92S208.66,201.48,208.66,201.48"/>
+          <path class="cls-2" d="m37.55,201.48L245.43-365.53h101.92S138.66,201.48,138.66,201.48"/>
+        </g>
+      </g>
+    </g>
+    <g class="cls-7">
+      <path class="cls-11" d="m1594.9,602.95l142.41-385.58h69.82l-142.96,385.58h-69.27Z"/>
+      <path class="cls-11" d="m46.46,177.49L176.17-173.71h69.16L115.12,177.49H46.46Z"/>
+    </g>
+    <g class="cls-9">
+      <g class="cls-8">
+        <circle class="cls-10" cx="2109.11" cy="45.09" r="763.61"/>
+      </g>
+    </g>
+  </g>
+</svg>
